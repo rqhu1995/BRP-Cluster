@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/ProblemInstance.cpp.o -c /root/project/BRP-cluster/src/Core/ProblemInstance.cpp",
+  "file": "/root/project/BRP-cluster/src/Core/ProblemInstance.cpp",
+  "output": "CMakeFiles/BRP-core.dir/src/Core/ProblemInstance.cpp.o"
+},
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/Station.cpp.o -c /root/project/BRP-cluster/src/Core/Station.cpp",
+  "file": "/root/project/BRP-cluster/src/Core/Station.cpp",
+  "output": "CMakeFiles/BRP-core.dir/src/Core/Station.cpp.o"
+},
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/Param.cpp.o -c /root/project/BRP-cluster/src/Core/Param.cpp",
+  "file": "/root/project/BRP-cluster/src/Core/Param.cpp",
+  "output": "CMakeFiles/BRP-core.dir/src/Core/Param.cpp.o"
+},
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Utils/MetricCalculator.cpp.o -c /root/project/BRP-cluster/src/Utils/MetricCalculator.cpp",
+  "file": "/root/project/BRP-cluster/src/Utils/MetricCalculator.cpp",
+  "output": "CMakeFiles/BRP-core.dir/src/Utils/MetricCalculator.cpp.o"
+},
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/KMedoid/MedoidInitializer.cpp.o -c /root/project/BRP-cluster/src/KMedoid/MedoidInitializer.cpp",
+  "file": "/root/project/BRP-cluster/src/KMedoid/MedoidInitializer.cpp",
+  "output": "CMakeFiles/BRP-core.dir/src/KMedoid/MedoidInitializer.cpp.o"
+},
+{
+  "directory": "/root/project/BRP-cluster/build",
+  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o -c /root/project/BRP-cluster/tests/ReadStationsTest.cpp",
+  "file": "/root/project/BRP-cluster/tests/ReadStationsTest.cpp",
+  "output": "CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o"
+}
+]

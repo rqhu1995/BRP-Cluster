@@ -1,0 +1,4 @@
+/root/project/BRP-cluster/build/CMakeFiles/BRP-core.dir
+/root/project/BRP-cluster/build/CMakeFiles/ReadStationsTest.dir
+/root/project/BRP-cluster/build/CMakeFiles/edit_cache.dir
+/root/project/BRP-cluster/build/CMakeFiles/rebuild_cache.dir
