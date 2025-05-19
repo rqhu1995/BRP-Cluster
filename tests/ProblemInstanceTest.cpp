@@ -1,4 +1,4 @@
-#include "Core/ProblemInstance.hpp"
+#include "coreProblemInstance.hpp"
 #include <filesystem>
 #include <fstream>
 #include <gtest/gtest.h>

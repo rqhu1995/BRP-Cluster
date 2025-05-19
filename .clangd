@@ -1,0 +1,4 @@
+CompileFlags:
+  Add: [-Wno-sign-compare]
+Diagnostics:
+  Suppress: ['sign-compare'] 

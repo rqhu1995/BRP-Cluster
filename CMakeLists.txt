@@ -5,6 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_SKIP_RPATH TRUE)
 
+# Enable debug mode and add debug flags
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Wextra -Wno-sign-compare")
+
 # Enable automatic rebuilding
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Set library paths to use system libraries
@@ -26,16 +30,17 @@ find_package(nlohmann_json REQUIRED)
 
 # Add main library
 add_library(BRP-core
-    src/Core/ProblemInstance.cpp
-    src/Core/Station.cpp
-    src/Core/Param.cpp
-    src/Utils/MetricCalculator.cpp
-    src/KMedoid/MedoidInitializer.cpp
+    src/core/problem.cpp
+    src/core/station.cpp
+    src/core/param.cpp
+    src/utils/metric.cpp
+    src/clustering/kmedoids.cpp
 )
 
 # Add include directories for main library
 target_include_directories(BRP-core PUBLIC
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/include/Utils
     ${CURL_INCLUDE_DIRS}
 )
 
@@ -53,4 +58,10 @@ add_executable(ReadStationsTest
 # Link test executable with required libraries
 target_link_libraries(ReadStationsTest
     BRP-core
+    GTest::GTest
+    GTest::Main
 )
+
+# Enable testing
+enable_testing()
+add_test(NAME ReadStationsTest COMMAND ReadStationsTest)

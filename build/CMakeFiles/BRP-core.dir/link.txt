@@ -1,0 +1,2 @@
+/usr/bin/ar qc libBRP-core.a CMakeFiles/BRP-core.dir/src/Core/ProblemInstance.cpp.o CMakeFiles/BRP-core.dir/src/Core/Station.cpp.o CMakeFiles/BRP-core.dir/src/Core/Param.cpp.o CMakeFiles/BRP-core.dir/src/Utils/MetricCalculator.cpp.o CMakeFiles/BRP-core.dir/src/KMedoid/KMedoid.cpp.o
+/usr/bin/ranlib libBRP-core.a

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -g -O0 -Wall -Wextra -Wno-sign-compare  -Wl,--disable-new-dtags CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o -o ReadStationsTest  libBRP-core.a /usr/lib/x86_64-linux-gnu/libcurl.so /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a 

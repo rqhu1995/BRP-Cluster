@@ -1,38 +1,32 @@
 [
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/ProblemInstance.cpp.o -c /root/project/BRP-cluster/src/Core/ProblemInstance.cpp",
-  "file": "/root/project/BRP-cluster/src/Core/ProblemInstance.cpp",
-  "output": "CMakeFiles/BRP-core.dir/src/Core/ProblemInstance.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/core/problem.cpp.o -c /home/runqiu/project/BRP-Cluster/src/core/problem.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/src/core/problem.cpp"
 },
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/Station.cpp.o -c /root/project/BRP-cluster/src/Core/Station.cpp",
-  "file": "/root/project/BRP-cluster/src/Core/Station.cpp",
-  "output": "CMakeFiles/BRP-core.dir/src/Core/Station.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/core/station.cpp.o -c /home/runqiu/project/BRP-Cluster/src/core/station.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/src/core/station.cpp"
 },
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Core/Param.cpp.o -c /root/project/BRP-cluster/src/Core/Param.cpp",
-  "file": "/root/project/BRP-cluster/src/Core/Param.cpp",
-  "output": "CMakeFiles/BRP-core.dir/src/Core/Param.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/core/param.cpp.o -c /home/runqiu/project/BRP-Cluster/src/core/param.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/src/core/param.cpp"
 },
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/Utils/MetricCalculator.cpp.o -c /root/project/BRP-cluster/src/Utils/MetricCalculator.cpp",
-  "file": "/root/project/BRP-cluster/src/Utils/MetricCalculator.cpp",
-  "output": "CMakeFiles/BRP-core.dir/src/Utils/MetricCalculator.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/utils/metric.cpp.o -c /home/runqiu/project/BRP-Cluster/src/utils/metric.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/src/utils/metric.cpp"
 },
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/KMedoid/MedoidInitializer.cpp.o -c /root/project/BRP-cluster/src/KMedoid/MedoidInitializer.cpp",
-  "file": "/root/project/BRP-cluster/src/KMedoid/MedoidInitializer.cpp",
-  "output": "CMakeFiles/BRP-core.dir/src/KMedoid/MedoidInitializer.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17 -o CMakeFiles/BRP-core.dir/src/clustering/kmedoids.cpp.o -c /home/runqiu/project/BRP-Cluster/src/clustering/kmedoids.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/src/clustering/kmedoids.cpp"
 },
 {
-  "directory": "/root/project/BRP-cluster/build",
-  "command": "/usr/bin/g++ -I/root/project/BRP-cluster/include -g -std=gnu++17 -o CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o -c /root/project/BRP-cluster/tests/ReadStationsTest.cpp",
-  "file": "/root/project/BRP-cluster/tests/ReadStationsTest.cpp",
-  "output": "CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o"
+  "directory": "/home/runqiu/project/BRP-Cluster/build",
+  "command": "/usr/bin/g++ -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1 -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils -g -g -O0 -Wall -Wextra -Wno-sign-compare -DGTEST_HAS_PTHREAD=1 -std=gnu++17 -o CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o -c /home/runqiu/project/BRP-Cluster/tests/ReadStationsTest.cpp",
+  "file": "/home/runqiu/project/BRP-Cluster/tests/ReadStationsTest.cpp"
 }
 ]

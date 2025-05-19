@@ -1,38 +1,84 @@
-#include "Core/ProblemInstance.hpp"
-#include "Utils/MetricCalculator.hpp"
+#include "clustering/kmedoids.hpp"
+#include "core/problem.hpp"
+#include "utils/metric.hpp"
+#include <cmath> // for std::abs
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 
 using namespace MetricCalculator;
 
 int main() {
+  // Load station data
   ProblemInstance instance("../data/results.csv");
+  auto stations = instance.getStations();
+  std::cout << "Stations loaded: " << stations.size() << "\n";
+  // Calculate BCRF and composite distance matrix
+  Param param(60, 2, 0.5, 10, 10, 10);
+  MetricCalculator::computeBCRF(stations, param);
+  auto compositeDistance = MetricCalculator::computeCompositeDistanceMatrix(
+      stations, instance.getTimeMatrix(), 2, 0.5);
 
-  std::cout << "Stations loaded: " << instance.getStations().size() << "\n";
+  // Perform KMedoid clustering
+  const int numClusters = 3; // You can adjust this number
+  KMedoid kmedoid(stations, numClusters);
+  kmedoid.setCompositeDistanceMatrix(compositeDistance);
+  // Run clustering with lambda = 0.5
+  auto clusters = kmedoid.run(0.5);
 
-  // system analysis, check the distribution of stations in the dataset
-  // (currentIventory > optimalInventory -> Surplus Stations; currentInventory <
-  // optimalInventory -> Deficit Stations, currentInventory == optimalInventory
-  // -> Balanced Stations) print out the number of surplus, deficit, and
-  // balanced stations
-  int surplus = 0;
-  int deficit = 0;
-  int balanced = 0;
-  for (const auto &station : instance.getStations()) {
-    if (station.getCurrentInventory() > station.getOptimalInventory()) {
-      surplus++;
-    } else if (station.getCurrentInventory() < station.getOptimalInventory()) {
-      deficit++;
-    } else {
-      balanced++;
+  // Print clustering results
+  std::cout << "Clustering Results:\n";
+  for (size_t i = 0; i < clusters.size(); ++i) {
+    int clusterSurplus = 0;
+    int clusterDeficit = 0;
+    int clusterBalanced = 0;
+    int totalInventoryDiff = 0;
+    double avgBcrf = 0.0;
+
+    std::cout << "Cluster " << i + 1 << " (" << clusters[i].size()
+              << " stations):\n";
+    for (int stationIdx : clusters[i]) {
+      const auto &station = stations[stationIdx];
+      int inventoryDiff =
+          station.getCurrentInventory() - station.getOptimalInventory();
+      totalInventoryDiff += std::abs(inventoryDiff);
+      avgBcrf += station.getBcrf();
+
+      if (inventoryDiff > 0)
+        clusterSurplus++;
+      else if (inventoryDiff < 0)
+        clusterDeficit++;
+      else
+        clusterBalanced++;
+    }
+    avgBcrf /= clusters[i].size();
+    std::cout << "  Cluster Summary:\n"
+              << "    Surplus stations: " << clusterSurplus << "\n"
+              << "    Deficit stations: " << clusterDeficit << "\n"
+              << "    Balanced stations: " << clusterBalanced << "\n"
+              << "    Total inventory difference: " << totalInventoryDiff
+              << "\n    Average BCRF: " << avgBcrf << "\n\n";
+  }
+
+  // Save results to CSV for visualization
+  std::ofstream outFile("real_stations_clustering.csv");
+  outFile << "Station,Latitude,Longitude,Cluster,CurrentInventory,"
+             "OptimalInventory,InventoryDiff,BCRF\n";
+  for (size_t i = 0; i < clusters.size(); ++i) {
+    for (int stationIdx : clusters[i]) {
+      const auto &station = stations[stationIdx];
+      double inventoryDiff =
+          station.getCurrentInventory() - station.getOptimalInventory();
+      outFile << stationIdx << "," << station.getCoordinate().latitude << ","
+              << station.getCoordinate().longitude << "," << i + 1 << ","
+              << station.getCurrentInventory() << ","
+              << station.getOptimalInventory() << "," << inventoryDiff << ","
+              << station.getBcrf() << "\n";
     }
   }
-  std::cout << "Surplus Stations: " << surplus << "\n";
-  std::cout << "Deficit Stations: " << deficit << "\n";
-  std::cout << "Balanced Stations: " << balanced << "\n";
+  outFile.close();
 
-  Param param(60, 0.7, 0.3, 10, 10, 10);
-  MetricCalculator::computeBCRF(instance.getStations(), param);
-  MetricCalculator::computeCompositeDistanceMatrix(
-      instance.getStations(), instance.getTimeMatrix(), 0.7, 0.3);
+  std::cout << "Results have been saved to real_stations_clustering.csv\n";
+
   return 0;
 }
