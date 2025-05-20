@@ -89,6 +89,14 @@ build CMakeFiles/BRP-core.dir/src/clustering/kmedoids.cpp.o: CXX_COMPILER__BRP-c
   OBJECT_DIR = CMakeFiles/BRP-core.dir
   OBJECT_FILE_DIR = CMakeFiles/BRP-core.dir/src/clustering
 
+build CMakeFiles/BRP-core.dir/src/clustering/tuple_evaluator.cpp.o: CXX_COMPILER__BRP-core_Debug /home/runqiu/project/BRP-Cluster/src/clustering/tuple_evaluator.cpp || cmake_object_order_depends_target_BRP-core
+  DEFINES = -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1
+  DEP_FILE = CMakeFiles/BRP-core.dir/src/clustering/tuple_evaluator.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -Wno-sign-compare -std=gnu++17
+  INCLUDES = -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils
+  OBJECT_DIR = CMakeFiles/BRP-core.dir
+  OBJECT_FILE_DIR = CMakeFiles/BRP-core.dir/src/clustering
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target BRP-core
@@ -97,7 +105,7 @@ build CMakeFiles/BRP-core.dir/src/clustering/kmedoids.cpp.o: CXX_COMPILER__BRP-c
 #############################################
 # Link the static library libBRP-core.a
 
-build libBRP-core.a: CXX_STATIC_LIBRARY_LINKER__BRP-core_Debug CMakeFiles/BRP-core.dir/src/core/problem.cpp.o CMakeFiles/BRP-core.dir/src/core/station.cpp.o CMakeFiles/BRP-core.dir/src/core/param.cpp.o CMakeFiles/BRP-core.dir/src/utils/metric.cpp.o CMakeFiles/BRP-core.dir/src/clustering/kmedoids.cpp.o
+build libBRP-core.a: CXX_STATIC_LIBRARY_LINKER__BRP-core_Debug CMakeFiles/BRP-core.dir/src/core/problem.cpp.o CMakeFiles/BRP-core.dir/src/core/station.cpp.o CMakeFiles/BRP-core.dir/src/core/param.cpp.o CMakeFiles/BRP-core.dir/src/utils/metric.cpp.o CMakeFiles/BRP-core.dir/src/clustering/kmedoids.cpp.o CMakeFiles/BRP-core.dir/src/clustering/tuple_evaluator.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g -g -O0 -Wall -Wextra -Wno-sign-compare
   OBJECT_DIR = CMakeFiles/BRP-core.dir
   POST_BUILD = :
@@ -106,51 +114,39 @@ build libBRP-core.a: CXX_STATIC_LIBRARY_LINKER__BRP-core_Debug CMakeFiles/BRP-co
   TARGET_PDB = BRP-core.a.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target ReadStationsTest
+# Object build statements for EXECUTABLE target tuple_evaluation_test
 
 
 #############################################
-# Order-only phony target for ReadStationsTest
+# Order-only phony target for tuple_evaluation_test
 
-build cmake_object_order_depends_target_ReadStationsTest: phony || cmake_object_order_depends_target_BRP-core
+build cmake_object_order_depends_target_tuple_evaluation_test: phony || cmake_object_order_depends_target_BRP-core
 
-build CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o: CXX_COMPILER__ReadStationsTest_Debug /home/runqiu/project/BRP-Cluster/tests/ReadStationsTest.cpp || cmake_object_order_depends_target_ReadStationsTest
+build CMakeFiles/tuple_evaluation_test.dir/tests/tuple_evaluation_test.cpp.o: CXX_COMPILER__tuple_evaluation_test_Debug /home/runqiu/project/BRP-Cluster/tests/tuple_evaluation_test.cpp || cmake_object_order_depends_target_tuple_evaluation_test
   DEFINES = -DJSON_DIAGNOSTICS=0 -DJSON_USE_IMPLICIT_CONVERSIONS=1
-  DEP_FILE = CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o.d
+  DEP_FILE = CMakeFiles/tuple_evaluation_test.dir/tests/tuple_evaluation_test.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -Wno-sign-compare -DGTEST_HAS_PTHREAD=1 -std=gnu++17
   INCLUDES = -I/home/runqiu/project/BRP-Cluster/include -I/home/runqiu/project/BRP-Cluster/include/Utils
-  OBJECT_DIR = CMakeFiles/ReadStationsTest.dir
-  OBJECT_FILE_DIR = CMakeFiles/ReadStationsTest.dir/tests
+  OBJECT_DIR = CMakeFiles/tuple_evaluation_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/tuple_evaluation_test.dir/tests
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target ReadStationsTest
+# Link build statements for EXECUTABLE target tuple_evaluation_test
 
 
 #############################################
-# Link the executable ReadStationsTest
+# Link the executable tuple_evaluation_test
 
-build ReadStationsTest: CXX_EXECUTABLE_LINKER__ReadStationsTest_Debug CMakeFiles/ReadStationsTest.dir/tests/ReadStationsTest.cpp.o | libBRP-core.a /usr/lib/x86_64-linux-gnu/libcurl.so /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a || libBRP-core.a
+build tuple_evaluation_test: CXX_EXECUTABLE_LINKER__tuple_evaluation_test_Debug CMakeFiles/tuple_evaluation_test.dir/tests/tuple_evaluation_test.cpp.o | libBRP-core.a /usr/lib/x86_64-linux-gnu/libcurl.so /usr/lib/x86_64-linux-gnu/libgtest_main.a /usr/lib/x86_64-linux-gnu/libgtest.a || libBRP-core.a
   FLAGS = -g -g -O0 -Wall -Wextra -Wno-sign-compare
   LINK_FLAGS = -Wl,--disable-new-dtags
   LINK_LIBRARIES = libBRP-core.a  /usr/lib/x86_64-linux-gnu/libcurl.so  /usr/lib/x86_64-linux-gnu/libgtest_main.a  /usr/lib/x86_64-linux-gnu/libgtest.a
-  OBJECT_DIR = CMakeFiles/ReadStationsTest.dir
+  OBJECT_DIR = CMakeFiles/tuple_evaluation_test.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = ReadStationsTest
-  TARGET_PDB = ReadStationsTest.dbg
-
-
-#############################################
-# Utility command for test
-
-build CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cd /home/runqiu/project/BRP-Cluster/build && /usr/bin/ctest --force-new-ctest-process
-  DESC = Running tests...
-  pool = console
-  restat = 1
-
-build test: phony CMakeFiles/test.util
+  TARGET_FILE = tuple_evaluation_test
+  TARGET_PDB = tuple_evaluation_test.dbg
 
 
 #############################################
@@ -188,7 +184,7 @@ build BRP-core: phony libBRP-core.a
 #############################################
 # Folder: /home/runqiu/project/BRP-Cluster/build
 
-build all: phony libBRP-core.a ReadStationsTest
+build all: phony libBRP-core.a tuple_evaluation_test
 
 # =============================================================================
 # Built-in targets

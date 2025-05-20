@@ -15,9 +15,6 @@ public:
   ClusterEvaluationResult
   evaluateCluster(const std::vector<int> &stationIndices,
                   const std::vector<Station> &stations);
-
-private:
-  int maxSurplus, maxDeficit;
   // Helper functions
   void generateTuples(const std::vector<int> &surplusIndices,
                       const std::vector<int> &deficitIndices,
@@ -26,8 +23,9 @@ private:
   TransferTuple evaluateTuple(const std::vector<int> &surplusIndices,
                               const std::vector<int> &deficitIndices,
                               const std::vector<Station> &stations);
-  void filterTuples(const std::vector<TransferTuple> &tuples,
-                    const std::vector<Station> &stations);
-  void greedyAllocateTuples(const std::vector<TransferTuple> &tuples,
-                            const std::vector<Station> &stations);
+  std::vector<TransferTuple>
+  greedySelectExclusiveTuples(const std::vector<TransferTuple> &tuples);
+
+private:
+  int maxSurplus, maxDeficit;
 };

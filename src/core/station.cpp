@@ -24,3 +24,12 @@ int Station::getCurrentInventory() const { return currentInventory; }
 int Station::getOptimalInventory() const { return optimalInventory; }
 
 const std::vector<double> &Station::getUdfValues() const { return udfValues; }
+
+StationStatus Station::getStatus() const {
+  if (currentInventory > optimalInventory) {
+    return StationStatus::SURPLUS;
+  } else if (currentInventory < optimalInventory) {
+    return StationStatus::DEFICIT;
+  }
+  return StationStatus::BALANCED;
+}

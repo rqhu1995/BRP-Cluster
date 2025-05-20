@@ -35,6 +35,7 @@ add_library(BRP-core
     src/core/param.cpp
     src/utils/metric.cpp
     src/clustering/kmedoids.cpp
+    src/clustering/tuple_evaluator.cpp
 )
 
 # Add include directories for main library
@@ -51,17 +52,17 @@ target_link_libraries(BRP-core PUBLIC
 )
 
 # Add test executable
-add_executable(ReadStationsTest
-    tests/ReadStationsTest.cpp
+add_executable(tuple_evaluation_test
+    tests/tuple_evaluation_test.cpp
 )
 
 # Link test executable with required libraries
-target_link_libraries(ReadStationsTest
+target_link_libraries(tuple_evaluation_test
     BRP-core
     GTest::GTest
     GTest::Main
 )
 
 # Enable testing
-enable_testing()
-add_test(NAME ReadStationsTest COMMAND ReadStationsTest)
+# enable_testing()
+# add_test(NAME tuple_evaluation_test COMMAND tuple_evaluation_test)

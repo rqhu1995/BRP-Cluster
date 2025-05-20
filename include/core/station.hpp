@@ -14,6 +14,8 @@ struct Coordinate {
   }
 };
 
+enum class StationStatus { SURPLUS, DEFICIT, BALANCED };
+
 class Station {
 public:
   Station() = default;
@@ -35,6 +37,7 @@ public:
   void setCapacity(int cap);
   void setCurrentInventory(int inv);
   void setBcrf(double bcrf);
+  StationStatus getStatus() const;
 
 private:
   std::string sysId;

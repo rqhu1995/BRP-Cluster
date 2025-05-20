@@ -1,5 +1,4 @@
 /home/runqiu/project/BRP-Cluster/build/CMakeFiles/BRP-core.dir
-/home/runqiu/project/BRP-Cluster/build/CMakeFiles/ReadStationsTest.dir
-/home/runqiu/project/BRP-Cluster/build/CMakeFiles/test.dir
+/home/runqiu/project/BRP-Cluster/build/CMakeFiles/tuple_evaluation_test.dir
 /home/runqiu/project/BRP-Cluster/build/CMakeFiles/edit_cache.dir
 /home/runqiu/project/BRP-Cluster/build/CMakeFiles/rebuild_cache.dir
